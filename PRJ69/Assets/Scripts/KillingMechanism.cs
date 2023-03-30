@@ -48,6 +48,8 @@ public class KillingMechanism : MonoBehaviour
         if (collision.gameObject.tag == "EnemyVeiwArea")
         {
             Debug.Log("enemy alerted");
+            enemyAlerted = true;
+            enemy = collision.gameObject;
         }
         if (collision.gameObject.tag == "Enemy")
         {
