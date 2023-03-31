@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace Pathfinding
+{ 
 public class KillingMechanism : MonoBehaviour
 {
+        AIDestinationSetter aIDestinationSetter;
     bool playerInKillZone;
     GameObject enemy;
     /*countdown variables.time till player dies afer he is exposed to gaurds.he can avoid this 
@@ -14,11 +16,13 @@ public class KillingMechanism : MonoBehaviour
     void Start()
     {
         timeCountdown = TimeLeft;
+            
     }
 
    
     void Update()
     {
+            
         if (Input.GetButtonDown("Fire1") && playerInKillZone)
         {
             Debug.Log("killed");
@@ -27,8 +31,10 @@ public class KillingMechanism : MonoBehaviour
         }
         if(enemyAlerted == true)
         {
+                  
             timeCountdown -= 1 * Time.deltaTime;
             print(timeCountdown);
+            
         }
         if(timeCountdown <= 0 )
         {
@@ -66,4 +72,5 @@ public class KillingMechanism : MonoBehaviour
         }
     }
 
+}
 }
